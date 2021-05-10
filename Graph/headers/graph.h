@@ -130,9 +130,10 @@ Node graph_getAdjList(int vertex);
  * Set the adjacency list of the vertex
  * 
  * @param vertex : index of the node
+ * @param adjList : new adjency list
  * 
  * @return int : return -1 if the vertex does not exist else, 0
  * */
-int graph_setAdjList(int vertex);
+int graph_setAdjList(Node adjList, int vertex);
 
 #endif
