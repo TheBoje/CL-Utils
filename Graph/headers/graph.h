@@ -8,7 +8,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include "node.h"
+#include "edge.h"
 
 // Graph structures 
 struct GraphP;
@@ -21,12 +21,12 @@ typedef const struct GraphP * const_Graph;
 #########################*/
 
 /**
- * Create a new graph with nbNodes nodes edgeless
+ * Create a new graph with nbEdges edges edgeless
  * 
- * @param nbNodes : number of nodes of the graph
- * @return Graph : a nbNodes graph edgeless
+ * @param nbEdges : number of edges of the graph
+ * @return Graph : a nbEdges graph edgeless
  * */
-Graph graph_createNew(int nbNodes);
+Graph graph_createNew(int nbEdges);
 
 /**
  * Create a copy of a graph
@@ -101,9 +101,9 @@ int graph_delEdge(Graph graph, int src, int dest);
  * @warning Cost a lot 
  * 
  * @param graph : graph where you delete the vertex
- * @param vertex : the index of the node
+ * @param vertex : the index of the edge
  * 
- * @return int : return -1 if the node doesn't exist, else 0
+ * @return int : return -1 if the edge doesn't exist, else 0
  * */
 int graph_delVertex(Graph graph, int vertex);
 
@@ -115,11 +115,11 @@ int graph_delVertex(Graph graph, int vertex);
 /**
  * Get the adjacency list of the vertex
  * 
- * @param vertex : index of the node
+ * @param vertex : index of the edge
  * 
- * @return Node : the adjacency list of the node
+ * @return Edge : the adjacency list of the edge
  * */
-Node graph_getAdjList(int vertex);
+Edge graph_getAdjList(int vertex);
 
 
 /*#######################
@@ -129,11 +129,11 @@ Node graph_getAdjList(int vertex);
 /**
  * Set the adjacency list of the vertex
  * 
- * @param vertex : index of the node
+ * @param vertex : index of the edge
  * @param adjList : new adjency list
  * 
  * @return int : return -1 if the vertex does not exist else, 0
  * */
-int graph_setAdjList(Node adjList, int vertex);
+int graph_setAdjList(Edge adjList, int vertex);
 
 #endif
