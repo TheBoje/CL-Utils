@@ -1,3 +1,0 @@
-C:\Users\vince\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\CL_Utils.dir/objects.a
-"D:\Program Files\mingw\mingw64\bin\ar.exe" cr CMakeFiles\CL_Utils.dir/objects.a @CMakeFiles\CL_Utils.dir\objects1.rsp
-"D:\Program Files\mingw\mingw64\bin\gcc.exe" -g -Wl,--whole-archive CMakeFiles\CL_Utils.dir/objects.a -Wl,--no-whole-archive -o CL_Utils.exe -Wl,--out-implib,libCL_Utils.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CL_Utils.dir\linklibs.rsp
