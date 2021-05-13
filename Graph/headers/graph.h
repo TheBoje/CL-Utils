@@ -8,7 +8,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include "node.h";
+#include "node.h"
 
 // Graph structures 
 struct GraphP;

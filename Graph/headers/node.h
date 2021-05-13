@@ -41,7 +41,7 @@ Node node_create(int dest);
  * 
  * @return Node : return the new list
  * */
-Node node_create(int dest, void * embedding);
+Node node_createWithEmbedding(int dest, void * embedding);
 
 /**
  * Create a new list copied from another
