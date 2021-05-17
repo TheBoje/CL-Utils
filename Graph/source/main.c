@@ -6,6 +6,7 @@
 
 int main(int argc, char const *argv[])
 {
-    printf("Hello, World!\n");
+    Edge edge = edge_create(0, 1);
+    edge_print(edge);
     return EXIT_SUCCESS;
 }

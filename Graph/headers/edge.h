@@ -25,23 +25,12 @@ typedef const struct EdgeP * const_Edge;
  * 
  * @warning the list is created without embedding by default
  * 
- * @param dest : index of the vertex 
- * 
- * @return Edge : return the new list
- * */
-Edge edge_create(int dest);
-
-/**
- * Create a new edge with embedding unlinked
- * 
- * @warning the list is created without embedding by default
- * 
  * @param dest : index of the vertex
- * @param embedding : edge's datas
+ * @param weight : weight of the edge
  * 
  * @return Edge : return the new list
  * */
-Edge edge_create_embedding(int dest, void * embedding);
+Edge edge_create(int dest, int weight);
 
 /**
  * Create a new list copied from another
@@ -50,7 +39,7 @@ Edge edge_create_embedding(int dest, void * embedding);
  * 
  * @return Edge : a new copied list
  * */
-Edge edge_createCopy(Edge edge);
+Edge edge_createCopy(Edge src);
 
 
 /*#######################
@@ -79,5 +68,7 @@ Edge edge_getNext(Edge edge);
  * @param inserted : edge inserted
  * */
 void edge_setNext(Edge src, Edge inserted);
+
+void edge_print(Edge src);
 
 #endif
