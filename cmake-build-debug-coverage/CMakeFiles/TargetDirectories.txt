@@ -1,3 +1,0 @@
-/cygdrive/d/Cours/OtherRepo/CL-Utils/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
-/cygdrive/d/Cours/OtherRepo/CL-Utils/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
-/cygdrive/d/Cours/OtherRepo/CL-Utils/cmake-build-debug-coverage/CMakeFiles/CL_Utils.dir
