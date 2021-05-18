@@ -9,14 +9,40 @@
 
 #include "edge.h"
 
-struct NodeP;
-typedef struct NodeP * Node;
-typedef const struct NodeP * const_Node;
+class Node {
+    private:
+        Edge * edges;
+        int length;
 
-Node node_createEmpty();
+    public:
+        // Constructor
 
-Node node_create(Edge *edges, int length);
+        Node(Edge * edges, int length);
 
-void node_print(Node node);
+        Node();
 
+        // Copy
+
+        Node copy();
+
+        // GETTERS
+
+        Edge * get_edges();
+
+        Edge get_edge(int index);
+
+        int get_length();
+
+        // SETTERS
+
+        void set_edges(Edge * edges, int lenght);
+
+        void add_edge(Edge edge);
+
+        void remove_edge(int index);
+
+        // DEBUG
+
+        void print();
+};
 #endif

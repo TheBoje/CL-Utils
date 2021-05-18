@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 3.18)
-project(CL_Utils C)
+project(CL_Utils)
 
+set(CMAKE_CXX_STANDARD 11)
 
 include_directories(Graph/headers)
+include_directories(Graph/source)
 
 add_executable(CL_Utils
-        Graph/headers/graph.h
-        Graph/headers/node.h
         Graph/headers/edge.h
-        Graph/source/graph.c
-        Graph/source/node.c
-        Graph/source/edge.c
-        Graph/source/main.c)
+        Graph/source/edge.cpp
+        Graph/source/main.cpp Graph/source/node.cpp)
