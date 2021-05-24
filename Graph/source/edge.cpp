@@ -30,16 +30,16 @@ int Edge::get_weight(){
 
 // SETTERS
 
-void Edge::set_dest(int dest) {
-    this->dest = dest;
+void Edge::set_dest(int _dest) {
+    this->dest = _dest;
 }
 
-void Edge::set_weight(int weight) {
-    this->weight = weight;
+void Edge::set_weight(int _weight) {
+    this->weight = _weight;
 }
 
 // DEBUG
 
 void Edge::print() {
-    std::cout << "Edge - [d:" << get_dest() << "|w:" << get_weight() << "]\n";
+    std::cout << "\t\tEdge - [d:" << get_dest() << "|w:" << get_weight() << "]\n";
 }

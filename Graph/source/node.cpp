@@ -6,6 +6,7 @@
 
 // Constructor
 
+// TODO(Louis): Faire une copy de edges ?
 Node::Node(Edge * edges, int length){
     this->edges = edges;
     this->length = length;
@@ -19,11 +20,11 @@ Node::Node(){
 // Copy
 
 Node Node::copy(){
-    Edge * edges = (Edge *)malloc(sizeof(Edge) * get_length());
-    for (int i = 0; i < get_length(); ++i) {
-        edges[i] = this->get_edge(i).copy();
+    Edge * _edges = (Edge *)malloc(sizeof(Edge) * get_length());
+    for (int i = 0; i < get_length(); i++) {
+        _edges[i] = this->get_edge(i).copy();
     }
-    return Node(edges, get_length());
+    return Node(_edges, get_length());
 }
 
 // GETTERS
@@ -43,9 +44,9 @@ int Node::get_length(){
 // SETTERS
 
 // TODO(Louis): Add length and null checks
-void Node::set_edges(Edge * edges, int length){
-    this->edges = edges;
-    this->length = length;
+void Node::set_edges(Edge * _edges, int _length){
+    this->edges = _edges;
+    this->length = _length;
 }
 
 // TODO(Louis): Add null check
@@ -57,7 +58,7 @@ void Node::add_edge(Edge edge){
 
 void Node::remove_edge(int index){
     edges[index].~Edge(); // Destroy edge
-    for (int i = index; i < length - 1; ++i) {
+    for (int i = index; i < get_length() - 1; i++) {
         edges[i] = edges[i + 1]; // Move each edge back by one
     }
     edges = (Edge *)realloc(edges, sizeof(Edge) * (length - 1)); // Resize edges array by -1
@@ -67,8 +68,8 @@ void Node::remove_edge(int index){
 // DEBUG
 
 void Node::print(){
-    std::cout << "Node - [l:" << get_length() << "]\n";
-    for (int i = 0; i < get_length(); ++i) {
+    std::cout << "\tNode - [l:" << get_length() << "]\n";
+    for (int i = 0; i < get_length(); i++) {
         edges[i].print();
     }
 }

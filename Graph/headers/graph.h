@@ -10,130 +10,41 @@
 
 #include "node.h"
 
-// Graph structures 
-struct GraphP;
-typedef struct GraphP * Graph;
-typedef const struct GraphP * const_Graph;
+class Graph {
+    private:
+        Node * nodes;
+        int length;
 
+    public:
+        // Constructor
 
-/*#######################
-    GRAPH CONSTRUCTORS
-#########################*/
+        Graph();
 
-/**
- * Create a new graph with nbEdges edges edgeless
- * 
- * @param nbEdges : number of edges of the graph
- * @return Graph : a nbEdges graph edgeless
- * */
-Graph graph_createNew(int nbEdges);
+        Graph(Node * nodes, int length);
 
-/**
- * Create a copy of a graph
- * 
- * @param src : graph to copy
- * @return Graph : the graph copied
- * */
-Graph graph_createCopy(Graph src);
+        // Copy
 
+        Graph copy();
 
-/*#######################
-    GRAPH DESTRUCTORS
-#########################*/
+        // Getters
 
-/**
- * Clear vertices and edges of the graph
- * 
- * @warning Cost a lot
- * 
- * @param graph : the graph you want to clear
- * */
-void graph_clear(Graph graph);
+        Node * get_nodes();
 
-/**
- * Destruct the graph, clear vertices and edges and free memory
- *
- * @warning Cost a lot
- * 
- * @param graph : the graph you want to destruct
- * */
-void graph_destruct(Graph graph);
+        Node get_node(int index);
 
-/*#######################
-    GRAPH CORE FUNCTIONS
-#########################*/
+        int get_length();
 
-/**
- * Add an oriented edge between vertices src and dest
- * 
- * @param graph : graph where you put an edge
- * @param src : index of the source vertex
- * @param dest : index of the destination vertex
- * 
- * @return int : return -1 if src or dest does not exist in graph, else 0
- * */
-int graph_addEdge(Graph graph, int src, int dest);
+        // Setters
 
-/**
- * Add a vertex without any connection to the graph
- * It will automatically be added at the end of the array
- * 
- * @param graph : graph where you add the vertex
- * 
- * @return int : index of the new vertex
- * */
-int graph_addVertex(Graph graph);
+        void set_nodes(Node * _nodes, int _length);
 
-/**
- * Delete an edge of the graph
- * 
- * @param graph : the graph where you delete the edge
- * @param src : the index of the source vertex
- * @param dest : the index of the destination vertex
- * 
- * @return int : return -1 if src or dest does not exist in the graph, else 0
- * */
-int graph_delEdge(Graph graph, int src, int dest);
+        void add_node(Node node);
 
-/**
- * delete a vertex, it will automatically clear all edges connected to him
- *  
- * @warning Cost a lot 
- * 
- * @param graph : graph where you delete the vertex
- * @param vertex : the index of the edge
- * 
- * @return int : return -1 if the edge doesn't exist, else 0
- * */
-int graph_delVertex(Graph graph, int vertex);
+        void remove_node(int index);
 
+        // Debug
 
-/*#######################
-    GRAPH GETTERS
-#########################*/
-
-/**
- * Get the adjacency list of the vertex
- * 
- * @param vertex : index of the edge
- * 
- * @return Edge : the adjacency list of the edge
- * */
-Edge graph_getAdjList(int vertex);
-
-
-/*#######################
-    GRAPH SETTERS
-#########################*/
-
-/**
- * Set the adjacency list of the vertex
- * 
- * @param vertex : index of the edge
- * @param adjList : new adjency list
- * 
- * @return int : return -1 if the vertex does not exist else, 0
- * */
-int graph_setAdjList(Edge adjList, int vertex);
+        void print();
+};
 
 #endif

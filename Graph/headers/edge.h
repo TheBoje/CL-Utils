@@ -26,19 +26,19 @@ class Edge {
 
         Edge copy();
 
-        // GETTERS
+        // Getters
 
         int get_dest();
 
         int get_weight();
 
-        // SETTERS
+        // Setters
 
-        void set_dest(int dest);
+        void set_dest(int _dest);
 
-        void set_weight(int weight);
+        void set_weight(int _weight);
 
-        // DEBUG
+        // Debug
 
         void print();
 };

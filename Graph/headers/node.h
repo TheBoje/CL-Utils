@@ -25,7 +25,7 @@ class Node {
 
         Node copy();
 
-        // GETTERS
+        // Getters
 
         Edge * get_edges();
 
@@ -33,15 +33,15 @@ class Node {
 
         int get_length();
 
-        // SETTERS
+        // Setters
 
-        void set_edges(Edge * edges, int lenght);
+        void set_edges(Edge * _edges, int _length);
 
         void add_edge(Edge edge);
 
         void remove_edge(int index);
 
-        // DEBUG
+        // Debug
 
         void print();
 };
